@@ -60,7 +60,7 @@ Mat FireMovement::checkRGB(Mat &original)
 
 Mat FireMovement::checkYCrCb(Mat &original)
 {
-	cv::Vec3f pixelYCbCr, pixelYCbCr1;
+	Vec3f pixelYCbCr, pixelYCbCr1;
 	Mat colorMask;
 	colorMask.create(original.size(), CV_8UC1);
 	Mat fgmask;
