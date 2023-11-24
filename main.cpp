@@ -5,7 +5,7 @@
 #include "FireMovement.h"
 // source: 
 //			Advanced Concepts for Intelligent Vision Systems: 11th International - https://books.google.pl/books?id=vUFuCQAAQBAJ&printsec=frontcover&hl=pl#v=onepage&q&f=false
-//
+// g++ $(pkg-config --cflags --libs opencv) main.cpp FireMovement.cpp -o test -std=c++11 -Wno-deprecated-declarations
 using namespace std;
 using namespace cv;
 using namespace cvui;
@@ -15,8 +15,8 @@ int main(void)
 	namedWindow("Options");
 	init("Options");
 	VideoCapture cap;
-	// cap.open("project3.mp4");
-	cap.open("project3_2.mp4");
+	cap.open("project3.mp4");
+	// cap.open("project3_2.mp4");
 	Mat frame, computerVision;
 	Mat options(320, 240, CV_8UC3, Scalar(0, 0, 0));
 	const char *theLabelFormat = "%.1Lf";
