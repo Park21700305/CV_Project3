@@ -15,7 +15,7 @@ int main(void)
 	namedWindow("Options");
 	init("Options");
 	VideoCapture cap;
-	cap.open("project3.mp4");
+	cap.open(0);
 	// cap.open("project3_2.mp4");
 	Mat frame, computerVision;
 	Mat options(320, 240, CV_8UC3, Scalar(0, 0, 0));
@@ -36,22 +36,22 @@ int main(void)
 		}
 		
 trackbar(options, 11, 70, 220, &f1.errorSize, 1, 100, segments, theLabelFormat, cvui::TRACKBAR_HIDE_VALUE_LABEL, segments);
-		if (button(options, 1, 21, "0")) {
-			cap.release();
-			cap.open("project3_2.mp4");
-		}
-		if (button(options, 31, 21, "Video1")) {
-			cap.release();
-			cap.open("project3_2.mp4");
-		}
-		if (button(options, 101, 21, "Video2")) {
-			cap.release();
-			cap.open("project3.mp4");
-		}
-		if (button(options, 171, 21, "Video3")) {
-			cap.release();
-			cap.open("project3.mp4");
-		}
+		// if (button(options, 1, 21, "0")) {
+		// 	cap.release();
+		// 	cap.open("project3_2.mp4");
+		// }
+		// if (button(options, 31, 21, "Video1")) {
+		// 	cap.release();
+		// 	cap.open("project3_2.mp4");
+		// }
+		// if (button(options, 101, 21, "Video2")) {
+		// 	cap.release();
+		// 	cap.open("project3.mp4");
+		// }
+		// if (button(options, 171, 21, "Video3")) {
+		// 	cap.release();
+		// 	cap.open("project3.mp4");
+		// }
 
 		if (button(options, 11, 141, "RGB Detect")) {
 			optionPicked = 1;
