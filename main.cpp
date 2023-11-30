@@ -17,7 +17,7 @@ int main(void)
 	VideoCapture cap;
 	cap.open("project3_1.mp4");
 	Mat frame, computerVision;
-	Mat options(350, 360, CV_8UC3, Scalar(0, 0, 0));
+	Mat options(330, 340, CV_8UC3, Scalar(0, 0, 0));
 	const char *theLabelFormat = "%.1Lf";
 	int segments = 1;
 	text(options, 1, 1, "Video samples:");
@@ -76,4 +76,3 @@ trackbar(options, 11, 70, 220, &f1.errorSize, 1, 100, segments, theLabelFormat, 
 	waitKey(0);
 
 }
-
