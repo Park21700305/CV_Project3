@@ -17,7 +17,7 @@ int main(void)
 	VideoCapture cap;
 	cap.open("project3_1.mp4");
 	Mat frame, computerVision;
-	Mat options(320, 240, CV_8UC3, Scalar(0, 0, 0));
+	Mat options(350, 360, CV_8UC3, Scalar(0, 0, 0));
 	const char *theLabelFormat = "%.1Lf";
 	int segments = 1;
 	text(options, 1, 1, "Video samples:");
@@ -39,19 +39,15 @@ trackbar(options, 11, 70, 220, &f1.errorSize, 1, 100, segments, theLabelFormat, 
 			cap.release();
 			cap.open(0);
 		}
-		if (button(options, 31, 21, "Video1")) {
+		if (button(options, 31, 21, "V1")) {
 			cap.release();
 			cap.open("project3_1.mp4");
 		}
-		if (button(options, 101, 21, "Video2")) {
+		if (button(options, 101, 21, "V2")) {
 			cap.release();
 			cap.open("project3_3.mp4");
 		}
-		if (button(options, 171, 21, "Video3")) {
-			cap.release();
-			cap.open("project3_4.mp4");
-		}
-		if (button(options, 171, 21, "Video3")) {
+		if (button(options, 171, 21, "V3")) {
 			cap.release();
 			cap.open("project3_5.mp4");
 		}
@@ -66,9 +62,9 @@ trackbar(options, 11, 70, 220, &f1.errorSize, 1, 100, segments, theLabelFormat, 
 		f1.drawContours(frame, computerVision);
 
 		update();
-		cv::imshow("What computer see", computerVision);
-		cv::imshow("Fire", frame); 
-		cv::imshow("Options", options);
+		cv::imshow("BackgroundSubtractorMOG2", computerVision);
+		cv::imshow("감지영상", frame); 
+		cv::imshow("옵션창", options);
 
 		if (waitKey(30) == 27) {
 			cap.release();
